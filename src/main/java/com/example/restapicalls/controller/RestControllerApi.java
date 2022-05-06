@@ -27,7 +27,7 @@ public class RestControllerApi {
     public String sayHello(@RequestBody UserData user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
     }
-    //curl -X PUT localhost:8080/hello/put/Mark/?lastName=Taylor -w "\n"
+    //curl -X PUT localhost:8080/hello/put/Neeta/?lastName=Mourya -w "\n"
     @PutMapping("/put/{firstName}")
     public String sayHelloPut(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
         return "Hello " + firstName + " " + lastName + " From Bridgelabz";
