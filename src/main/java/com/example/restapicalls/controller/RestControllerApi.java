@@ -1,5 +1,6 @@
 package com.example.restapicalls.controller;
 
+import com.example.restapicalls.model.UserData;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,4 +21,11 @@ public class RestControllerApi {
     public String sayHelloPara(@PathVariable String name) {
         return "Hello " + name + " From Bridgelabz";
     }
+    //curl -X POST -H "Content-Type: application/json" -d '{"firstName": ”Neeta","lastName": ”Mourya"}'
+    //"http://localhost:8080/hello/post" -w "\n"
+    @PostMapping("/post")
+    public String sayHello(@RequestBody UserData user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
+    }
+
 }
